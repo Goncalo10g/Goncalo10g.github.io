@@ -1,56 +1,170 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
-  <meta charset="utf-8">
-  <title>Primeira Página</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Minha Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 30px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #28a745;
+        }
+
+        .hero {
+            height: 500px;
+            background: #f8f9fa;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .highlight {
+            color: #28a745;
+        }
+
+        .hero img {
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background: #28a745;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        .btn:hover {
+            background: #218838;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .projeto-card {
+            background: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            width: 250px;
+        }
+
+        .projeto-card h3 {
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+
+        .tech-word {
+            background: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 20px;
+            }
+            
+            .hero img {
+                width: 200px;
+                height: 200px;
+            }
+            
+            nav a {
+                margin: 0 10px;
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#disciplina">DIW</a>
+    </nav>
 
-  <header>
-    <p>
-      <a href="#fotografias">Fotografias</a>
-      <a href="#labs">Labs</a>
-      <a href="#diw">Diw</a>
-    </p>
-  </header>
+    <div class="hero">
+        <h1>Sou um <span class="highlight">estudante</span> apaixonado por desenvolver aplicações web <span class="highlight">inovadoras</span></h1>
+        <a href="#projetos" class="btn">Ver Projetos</a>
+        <br>
+        <img src="images/foto_perfil.png" alt="Foto de perfil">
+    </div>
 
-  <main>
-    <h3>
-      HERO
-    </h3>
-    <div id="fotografias" class="fotografias">
+    <section id="projetos">
+        <h2>Os Meus Projectos</h2>
+        
+        <div class="projeto-card">
+            <h3>Lab 1</h3>
+            <p>Estrutura base HTML</p>
+            <a href="lab1/index.html" class="btn">Ver Lab 1</a>
+        </div>
+        
+        <div class="projeto-card">
+            <h3>Lab 2</h3>
+            <p>Layout com CSS</p>
+            <a href="lab2/index.html" class="btn">Ver Lab 2</a>
+        </div>
+        
+        <div class="projeto-card">
+            <h3>Lab 3</h3>
+            <p>JavaScript interativo</p>
+            <a href="lab3/index.html" class="btn">Ver Lab 3</a>
+        </div>
+    </section>
 
-
-      <img src="images/cris.jpg" alt="Cris">
-      <h3>
-        LABS
-      </h3>
-      <p>
-      <div id="labs" class="Labs"></div>
-      </p>
-      <nav>
-        <ul>
-          <li><a href="lab1/index.html">Lab1</a></li>
-          <li><a href="lab2/index.html">Lab2</a></li>
-          <li><a href="lab3/index.html">Lab3</a></li>
-        </ul>
-      </nav>
-      <h3>
-        DIW
-      </h3>
-
-      <div id="diw" class="Diw">
-
-        <img src="images/diw.svg" alt="Desenvolvimento de Interfaces Web" style="width: 300px;">
-  </main>
-
-  <footer>
-    <p>Universidade Lusófona © 2025</p>
-  </footer>
-
+    <section id="disciplina">
+        <h2>Desenvolvimento de Interfaces Web</h2>
+        <span class="tech-word">HTML</span>
+        <span class="tech-word">CSS</span>
+        <span class="tech-word">JavaScript</span>
+    </section>
 </body>
-
 </html>

@@ -3,26 +3,89 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lisboa - Multimédia</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .fotografias {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 10px;
+        .foto-destaque {
+            width: 100%;
+            height: 250px;
+            background: url('images/lisbon.jpg') center;
+            background-size: cover;
+            position: relative;
+        }
+        
+        .texto-sobre-imagem {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .video-background {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            margin: 20px 0;
         }
 
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
         .fotografias img {
             width: 150px;
-            border-radius: 20px;
+            border-radius: 10px;
+            margin: 5px;
+        }
+        
+        .secao-fotos {
+            background-color: #f0f8f0;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .secao-video {
+            background-color: #f0f0f8;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .secao-poema {
+            background-color: #f8f0f0;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .foto-destaque {
+                height: 200px;
+            }
+            
+            .fotografias img {
+                width: 120px;
+            }
+
+            .video-background {
+                height: 250px;
+            }
+
+            iframe {
+                width: 300px;
+                height: 200px;
+            }
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>A minha Cidade</h1>
+        <h1>Lisboa</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="local.html">Localização</a>
@@ -30,58 +93,56 @@
             <a href="info.html">Informação</a>
         </nav>
     </header>
+    
     <main>
-        <h2>Multimédia</h2>
-        <p>Nesta página encontra conteúdos multimédia.</p>
-        <p>
-            <a href="#fotografias">Fotografias</a>
-            <a href="#video">Vídeo</a>
-            <a href="#poema">Poema</a>
-        </p>
-        <section>
+        <div class="foto-destaque">
+            <div class="texto-sobre-imagem">
+                Lisboa - Cidade das Sete Colinas
+            </div>
+        </div>
 
-            <h3>Fotografias</h3>
-            <div id="fotografias" class="fotografias">
-                <img src="images/Alfama.jpg" alt="Torre de Belém">
-                <img src="images/Avenida da Liberdade.jpg" alt="Mosteiro dos Jerónimos">
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="images/video lisboa.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <div class="secao-fotos">
+            <h2>Fotografias</h2>
+            <div class="fotografias">
+                <img src="images/Alfama.jpg" alt="Alfama">
+                <img src="images/torre belem.jpg" alt="Torre de Belém">
                 <img src="images/Castelo de São Jorge.jpg" alt="Castelo de São Jorge">
-                <img src="images/Elevador de Santa Justa.png" alt="Praça do Comércio (Terreiro do Paço)">
-                <img src="images/Mosteiro dos Jerónimos.jpg" alt="Elevador de Santa Justa">
-                <img src="images/Parque das Nações.jpg" alt="Alfama">
-                <img src="images/Praça do Comércio (Terreiro do Paço).jpg" alt="Parque das Nações">
-                <img src="images/torre belem.jpg" alt="Avenida da Liberdade">
+                <img src="images/Mosteiro dos Jerónimos.jpg" alt="Mosteiro dos Jerónimos">
+                <img src="images/Parque das Nações.jpg" alt="Parque das Nações">
+                <img src="images/Praça do Comércio (Terreiro do Paço).jpg" alt="Praça do Comércio">
             </div>
-        </section>
-        <section>
-            <h4>Vídeo</h4>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/1yBuwEuf3Sw?si=glLVlTTpf1lddjtQ"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </section>
-        <section>
-            <h3>Poesia</h3>
-            <div id="poema" class="Poema">
-                <p>Lisboa veste-se de sol,
-                    <br>
-                    espalha saudade no ar,
-                    <br>
-                    tram que sobe o velho rol,
-                    <br>
-                    janelas prontas a cantar.
-                    <br>
-                    O Tejo beija a cidade,
-                    <br>
-                    espelho de ouro a brilhar,
-                    <br>
-                    entre fado e liberdade,
-                    <br>
-                    Lisboa aprende a sonhar.
-                </p>
+        </div>
+        
+        <div class="secao-video">
+            <h2>Vídeo do YouTube</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/1yBuwEuf3Sw?si=glLVlTTpf1lddjtQ"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        
+        <div class="secao-poema">
+            <h2>Poesia</h2>
+            <div id="poema">
+                <p>Lisboa veste-se de sol,<br>
+                espalha saudade no ar,<br>
+                tram que sobe o velho rol,<br>
+                janelas prontas a cantar.<br><br>
+                O Tejo beija a cidade,<br>
+                espelho de ouro a brilhar,<br>
+                entre fado e liberdade,<br>
+                Lisboa aprende a sonhar.</p>
             </div>
-        </section>
+        </div>
 
     </main>
+    
     <footer>
         <p>DIW 2025</p>
     </footer>

@@ -3,36 +3,80 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lisboa - Informação</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        .info-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        .info-texto {
+            padding: 20px;
+        }
+        
+        .info-dados {
+            padding: 20px;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
         th {
             background-color: lightblue;
             color: darkblue;
+            padding: 10px;
+            text-align: left;
         }
-
+        
         td {
             background-color: lightgray;
             color: black;
+            padding: 10px;
         }
-
-        table {
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        th,
-        td {
+        
+        th, td {
             border: 1px solid black;
-            padding: 8px;
-            text-align: left;
+        }
+        
+        .curiosidades {
+            grid-column: 1 / -1;
+            padding: 20px;
+            background-color: #f9f9f9;
+            margin-top: 20px;
+        }
+        
+        .imagem-info {
+            width: 100%;
+            height: 200px;
+            margin: 10px 0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .imagem-info img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        @media (max-width: 768px) {
+            .info-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>A minha Cidade</h1>
+        <h1>Lisboa</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="local.html">Localização</a>
@@ -40,57 +84,71 @@
             <a href="info.html">Informação</a>
         </nav>
     </header>
+    
     <main>
         <h2>Informações</h2>
-        <p>Lisboa é uma cidade histórica e vibrante, conhecida pelas suas colinas, arquitetura única e rica cultura. É a
-            capital de Portugal e oferece uma mistura fascinante de tradição e modernidade.</p>
-
-        <table>
-            <tr>
-                <th colspan="2">Demografia</th>
-                <th>População</th>
-                <th>506.892 hab</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td>densidade populacional</td>
-                <td>5066 hab/km²</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th colspan="2">Geografia</th>
-                <th>Área</th>
-                <th>100km²</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Região</td>
-                <td>Lisboa</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>País</td>
-                <td>Portugal</td>
-                <td></td>
-            </tr>
-            <tr>
-                <th colspan="2">Website</th>
-                <th colspan="2"><a href="https://www.cm-lisboa.pt">www.cm-lisboa.pt</a></th>
-            </tr>
-        </table>
-
-        <h3>5 Curiosidades sobre Lisboa:</h3>
-        <ol>
-            <li>Lisboa é conhecida como a "Cidade das Sete Colinas", construída sobre sete colinas principais.</li>
-            <li>O Elevador de Santa Justa, inaugurado em 1902, é o único elevador vertical da cidade para uso público.
-            </li>
-            <li>O Fado, género musical português, nasceu nos bairros populares de Lisboa no século XIX.</li>
-            <li>Lisboa tem mais de 2000 anos de história, tendo sido fundada pelos romanos com o nome de Olisipo.</li>
-            <li>A Ponte 25 de Abril foi construída pela mesma empresa que construiu a Golden Gate Bridge em São
-                Francisco.</li>
-        </ol>
+        
+        <div class="info-container">
+            <div class="info-texto">
+                <p>Lisboa é uma cidade histórica e vibrante, conhecida pelas suas colinas, arquitetura única e rica cultura. É a capital de Portugal e oferece uma mistura fascinante de tradição e modernidade.</p>
+                
+                <div class="imagem-info">
+                    <img src="images/cidade.jpg" alt="Lisboa">
+                </div>
+                
+                <p>A cidade situa-se junto ao rio Tejo e é famosa pelos seus monumentos, fado e gastronomia tradicional portuguesa.</p>
+            </div>
+            
+            <div class="info-dados">
+                <table>
+                    <tr>
+                        <th colspan="2">Demografia</th>
+                        <th>População</th>
+                        <th>506.892 hab</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>densidade populacional</td>
+                        <td>5066 hab/km²</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Geografia</th>
+                        <th>Área</th>
+                        <th>100km²</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Região</td>
+                        <td>Lisboa</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>País</td>
+                        <td>Portugal</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Website</th>
+                        <th colspan="2"><a href="https://www.cm-lisboa.pt">www.cm-lisboa.pt</a></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="curiosidades">
+            <h3>5 Curiosidades sobre Lisboa:</h3>
+            <ol>
+                <li>Lisboa é conhecida como a "Cidade das Sete Colinas", construída sobre sete colinas principais.</li>
+                <li>O Elevador de Santa Justa, inaugurado em 1902, é o único elevador vertical da cidade para uso público.</li>
+                <li>O Fado, género musical português, nasceu nos bairros populares de Lisboa no século XIX.</li>
+                <li>Lisboa tem mais de 2000 anos de história, tendo sido fundada pelos romanos com o nome de Olisipo.</li>
+                <li>A Ponte 25 de Abril foi construída pela mesma empresa que construiu a Golden Gate Bridge em São Francisco.</li>
+            </ol>
+        </div>
     </main>
+    
     <footer>
         <p>DIW 2025</p>
     </footer>
