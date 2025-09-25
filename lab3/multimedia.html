@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lisboa - Multimédia</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .fotografias {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .fotografias img {
+            width: 150px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>A minha Cidade</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimédia</a>
+            <a href="info.html">Informação</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Multimédia</h2>
+        <p>Nesta página encontra conteúdos multimédia.</p>
+        <p>
+            <a href="#fotografias">Fotografias</a>
+            <a href="#video">Vídeo</a>
+            <a href="#poema">Poema</a>
+        </p>
+        <section>
+
+            <h3>Fotografias</h3>
+            <div id="fotografias" class="fotografias">
+                <img src="images/Alfama.jpg" alt="Torre de Belém">
+                <img src="images/Avenida da Liberdade.jpg" alt="Mosteiro dos Jerónimos">
+                <img src="images/Castelo de São Jorge.jpg" alt="Castelo de São Jorge">
+                <img src="images/Elevador de Santa Justa.png" alt="Praça do Comércio (Terreiro do Paço)">
+                <img src="images/Mosteiro dos Jerónimos.jpg" alt="Elevador de Santa Justa">
+                <img src="images/Parque das Nações.jpg" alt="Alfama">
+                <img src="images/Praça do Comércio (Terreiro do Paço).jpg" alt="Parque das Nações">
+                <img src="images/torre belem.jpg" alt="Avenida da Liberdade">
+            </div>
+        </section>
+        <section>
+            <h4>Vídeo</h4>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/1yBuwEuf3Sw?si=glLVlTTpf1lddjtQ"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section>
+            <h3>Poesia</h3>
+            <div id="poema" class="Poema">
+                <p>Lisboa veste-se de sol,
+                    <br>
+                    espalha saudade no ar,
+                    <br>
+                    tram que sobe o velho rol,
+                    <br>
+                    janelas prontas a cantar.
+                    <br>
+                    O Tejo beija a cidade,
+                    <br>
+                    espelho de ouro a brilhar,
+                    <br>
+                    entre fado e liberdade,
+                    <br>
+                    Lisboa aprende a sonhar.
+                </p>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <p>DIW 2025</p>
+    </footer>
+</body>
+
+</html>
