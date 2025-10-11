@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5</title>
+</head>
+<body>
+    <h1 id="texto-hover">1. Passa o rato por aqui!</h1>
+    <br><br>
+
+    <h2>2. Pinta-me!</h2>
+    <button class="cor-btn" data-color="red">Red</button>
+    <button class="cor-btn" data-color="green">Green</button>
+    <button class="cor-btn" data-color="blue">Blue</button>
+    <br><br>
+
+    <h2>3. Experimenta escrever...</h2>
+    <input type="text" id="input-texto">
+    <br><br>
+
+    <h2>4. Escolha uma cor:</h2>
+    <select id="cor-select">
+        <option value="white">White</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+    </select>
+    <br><br>
+
+    <h2>5. <button id="contar-btn">Conta!</button> <span id="num-contador">0</span></h2>
+    <br>
+
+    <h2>6. <input type="text" id="nome-input" placeholder="Insira o seu nome"> 
+        <input type="text" id="idade-input" placeholder="Insira a sua idade"> 
+        <button id="submit-btn">Submit</button></h2>
+    <p id="msg-resultado"></p>
+    <br>
+
+    <h2>7. Automatic Counter: <span id="auto-counter">0</span></h2>
+
+    <script>
+        let hover = document.querySelector("#texto-hover");
+        hover.addEventListener("mouseenter", function() {
+            hover.textContent = "1. Obrigado por passares!";
+        });
+        hover.addEventListener("mouseleave", function() {
+            hover.textContent = "1. Passa o rato por aqui!";
+        });
+
+        let titulo = document.querySelectorAll("h2")[0];
+        let botoesCor = document.querySelectorAll(".cor-btn");
+        botoesCor.forEach(function(btn) {
+            btn.onclick = function() {
+                titulo.style.color = btn.getAttribute("data-color");
+            };
+        });
+
+        let inputTexto = document.querySelector("#input-texto");
+        inputTexto.oninput = function() {
+            let cores = ["lightblue", "lightgreen", "lightyellow", "lightpink", "lightcoral"];
+            let tamanho = inputTexto.value.length;
+            inputTexto.style.backgroundColor = cores[tamanho % cores.length];
+        };
+
+        let selectCor = document.querySelector("#cor-select");
+        selectCor.onchange = function() {
+            document.body.style.backgroundColor = selectCor.value;
+        };
+
+        let botaoContar = document.querySelector("#contar-btn");
+        let contadorDisplay = document.querySelector("#num-contador");
+        let valorContador = localStorage.getItem("counter");
+        if(!valorContador) {
+            localStorage.setItem("counter", 0);
+            valorContador = 0;
+        }
+        contadorDisplay.textContent = valorContador;
+        botaoContar.onclick = function() {
+            valorContador++;
+            contadorDisplay.textContent = valorContador;
+            localStorage.setItem("counter", valorContador);
+        };
+
+        let botaoSubmit = document.querySelector("#submit-btn");
+        botaoSubmit.onclick = function(e) {
+            e.preventDefault();
+            let nome = document.querySelector("#nome-input").value;
+            let idade = document.querySelector("#idade-input").value;
+            if(nome && idade) {
+                document.querySelector("#msg-resultado").textContent = "Olá, o " + nome + " tem " + idade + "!";
+            }
+        };
+
+        let autoCounter = document.querySelector("#auto-counter");
+        let valorAuto = localStorage.getItem("autoCounter");
+        if(!valorAuto) {
+            localStorage.setItem("autoCounter", 0);
+            valorAuto = 0;
+        }
+        autoCounter.textContent = valorAuto;
+        
+        function incrementar() {
+            valorAuto++;
+            autoCounter.textContent = valorAuto;
+            localStorage.setItem("autoCounter", valorAuto);
+        }
+        setInterval(incrementar, 1000);
+    </script>
+</body>
+</html>
